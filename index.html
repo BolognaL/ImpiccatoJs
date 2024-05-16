@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="usernameContainer" class="container">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" placeholder="Your name">
+        <button onclick="startGame()" class="button">Start Game</button>
+    </div>
+    <div id="game" class="container" style="display: none;">
+        <h1>Rock Paper Scissors</h1>
+        <div id="usernameDisplay"></div>
+        <div id="moves">
+            <button class="move" onclick="play(0)">
+                <img src="https://cdn.glitch.global/1346464f-940b-4196-8df8-6c125234335b/sasso.png?v=1715077724907" alt="Rock">
+            </button>
+            <button class="move" onclick="play(1)">
+                <img src="https://cdn.glitch.global/1346464f-940b-4196-8df8-6c125234335b/carta.png?v=1715077720321" alt="Paper">
+            </button>
+            <button class="move" onclick="play(2)">
+                <img src="https://cdn.glitch.global/1346464f-940b-4196-8df8-6c125234335b/forbice.png?v=1715077711737" alt="Scissors">
+            </button>
+        </div>
+        <div id="result"></div>
+        <button id="disconnectButton" onclick="disconnect()" class="button">Disconnect</button>
+        <button id="restartButton" onclick="restartGame()" class="button">Restart Game</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
