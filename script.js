@@ -1,4 +1,17 @@
 const socket = io();
+let username = "";
+
+function startGame() {
+    username = document.getElementById('username').value.trim();
+    if (username === "") {
+        alert("Please enter your name!");
+        return;
+    }
+    socket.emit('startGame', username);
+    document.getElementById('usernameContainer').style.display = 'none';
+    document.getElementById('game').style.display = 'block';
+    document.getElementById('usernameDisplay').innerText = `Welcome, ${username}!`;
+}
 
 function play(move) {
     socket.emit('play', move);
@@ -17,8 +30,6 @@ socket.on('result', (result) => {
 });
 
 function getResult(playerMove, opponentMove) {
-    // Logic to determine the winner
-    // 0: Draw, 1: Player wins, 2: Opponent wins
     if (playerMove === opponentMove) return 0;
     if ((playerMove === 0 && opponentMove === 2) ||
         (playerMove === 1 && opponentMove === 0) ||
@@ -30,5 +41,13 @@ function getResult(playerMove, opponentMove) {
 
 function restartGame() {
     socket.emit('restartGame');
+    document.getElementById('result').innerText = "";
+}
+
+function disconnect() {
+    socket.emit('disconnectGame');
+    document.getElementById('game').style.display = 'none';
+    document.getElementById('usernameContainer').style.display = 'block';
+    document.getElementById('username').value = "";
     document.getElementById('result').innerText = "";
 }
