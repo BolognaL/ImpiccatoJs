@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    background-image: url('https://cdn.glitch.global/1346464f-940b-4196-8df8-6c125234335b/tavolo2.jpg?v=1715675253394');
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Trasparenza bianca per il contenitore */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra leggera */
+    max-width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.move {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.move:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333333;
+}
+
+.button {
+    background-color: #008CBA;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #005f7a;
+}
